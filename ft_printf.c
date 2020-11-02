@@ -6,7 +6,7 @@
 /*   By: jolim <ezemango@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 19:58:56 by jolim             #+#    #+#             */
-/*   Updated: 2020/11/01 19:17:33 by jolim            ###   ########.fr       */
+/*   Updated: 2020/11/02 19:30:59 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int	ft_printf(const char *format, ...)
 
 	va_start(ap, format);
 	fmt = (char *)format;
-	p = 0;
+	p = -1;
 	count = 0;
-	while (*(fmt + p))
+	while (*(fmt + ++p))
 	{
 		if (*(fmt + p) == '%')
 		{
@@ -71,7 +71,6 @@ int	ft_printf(const char *format, ...)
 			free(spec);
 			p = -1;
 		}
-		p++;
 	}
 	count += write(1, fmt, p);
 	va_end(ap);
