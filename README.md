@@ -1,4 +1,4 @@
 # ft_printf
 
-This is a project ft_print written by jolim.
+This is a project ft_print created by jolim.
 No bonus included.
